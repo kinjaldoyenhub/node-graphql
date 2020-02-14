@@ -1,0 +1,26 @@
+type User {
+  id: Int
+  name: String
+  email: String
+  phoneNumber: String
+  address: String
+  zipCode: String
+  fileName: String
+}
+
+input UserInput {
+  name: String
+  email: String
+  phoneNumber: String
+  address: String
+  zipCode: String
+  fileName: String
+}
+
+type Query {
+   getUser: User @isAuth
+}
+
+type Mutation {
+   createUser(data: UserInput): User
+}
